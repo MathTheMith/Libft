@@ -1,25 +1,18 @@
-#include "unistd.h"
-#include <stdlib.h>
-#include <stdio.h>
-int ft_strlen(char *c)
-{
-	size_t i;
-	i = 0;
-	while (c[i])
-		i++;
-	return(i);
-}
+#include "libft.h"
+
 char *ft_strjoin(char const *s1, char const *s2)
 {
 	size_t len;
-	int i;
-	int j;
+	size_t i;
+	size_t j;
 	char *ptr;
 
 	i = 0;
 	j = 0;
 	len = ft_strlen((char *)s1) + ft_strlen((char *)s2);
-	ptr = malloc(len);
+	ptr = malloc(len + 1);
+	if (!ptr)
+		return(NULL);
 	while (ft_strlen((char *)s1) > i)
 	{
 		ptr[i] = s1[i];
@@ -30,11 +23,12 @@ char *ft_strjoin(char const *s1, char const *s2)
 		ptr[i + j] = s2[j];
 		j++;
 	}
+	ptr[i + j] = '\0';
 	return (ptr);
 }
 // int main(void)
 // {
-// 	printf("%s", ft_strjoin("Bonjour", " a tous"));
+// 	printf("%s", ft_strjoin("Tripouille", "1"));
 // }
 
 	

@@ -6,7 +6,7 @@
 /*   By: mvachon <mvachon@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 17:44:02 by mvachon           #+#    #+#             */
-/*   Updated: 2024/11/07 14:46:22 by mvachon          ###   ########lyon.fr   */
+/*   Updated: 2024/11/09 18:14:50 by mvachon          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,5 @@ char *ft_strchr(const char *s, int c)
 
 // int main(void)
 // {
-//   printf("%s", ft_strchr("bonjour", 'o'));
+//   printf("%s", ft_strchr("bonjour", 'j'));
 // }

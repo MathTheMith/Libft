@@ -6,7 +6,7 @@
 /*   By: mvachon <mvachon@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 08:19:50 by mvachon           #+#    #+#             */
-/*   Updated: 2024/11/07 09:35:28 by mvachon          ###   ########lyon.fr   */
+/*   Updated: 2024/11/09 17:38:20 by mvachon          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,7 @@ char *ft_strdup(const char *s)
     size_t i;
     char *ptr;
     i = 0;
-    while (s[i])
-        i++;
-    ptr = malloc(i + 1);
+    ptr = malloc(ft_strlen(s) + 1);
     if (ptr == NULL)
         return (0);
     i = 0;
@@ -30,7 +28,6 @@ char *ft_strdup(const char *s)
     }
     ptr[i] = '\0';
     return(ptr);
-    free(ptr);
 }
 
 // int main(void)

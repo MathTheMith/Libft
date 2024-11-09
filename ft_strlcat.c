@@ -6,21 +6,12 @@
 /*   By: mvachon <mvachon@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 12:34:09 by mvachon           #+#    #+#             */
-/*   Updated: 2024/11/09 14:57:32 by mvachon          ###   ########lyon.fr   */
+/*   Updated: 2024/11/09 18:27:31 by mvachon          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <bsd/string.h>
-
-size_t	ft_strlen (const char *s)
-{
-	size_t i;
-	i = 0;
-	while (s[i])
-          i++;
-	return (i);
-}
 
 size_t ft_strlcat(char *dst, const char *src, size_t size)
 {
