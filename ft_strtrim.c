@@ -28,6 +28,8 @@ char *ft_strtrim(char const *s1, char const *set)
 	i = 0;
 	len = ft_strlen_w_set(s1, set);
 	ptr = malloc(j + 1);
+	if (!ptr)
+		return (NULL);
 	while(ft_strchr(set, s1[i]))
 		i++;
 	while(s1[i] && len-- > 0)
@@ -40,8 +42,8 @@ char *ft_strtrim(char const *s1, char const *set)
 	return (ptr);
 }
 
-// int main(void)
-// {
-// 	printf("%s", ft_strtrim("aaaaabfaaaaaabaaa", "a"));
-// }
+int main(void)
+{
+	printf("%s", ft_strtrim("  abfaaaaaasdfsdfba", "a"));
+}
 
