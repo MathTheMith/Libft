@@ -6,7 +6,7 @@
 #    By: mvachon <mvachon@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/09 14:35:29 by mvachon           #+#    #+#              #
-#    Updated: 2024/11/09 15:17:07 by mvachon          ###   ########lyon.fr    #
+#    Updated: 2024/11/10 17:11:12 by mvachon          ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,6 +37,8 @@ SRC = ft_isalpha.c \
 	  ft_strtrim.c \
 	  ft_substr.c \
 	  ft_strjoin.c \
+	  ft_itoa.c \
+	  ft_split.c \
 
 HEADER = libft.h
 NAME = libft.a
@@ -50,8 +52,8 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	ar rcs $(NAME) $(OBJ)
 
-%.0: %.c
-	$(CC) $(CFLAGS) -c $< -0 $@
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	rm -f $(OBJ)

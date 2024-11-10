@@ -6,7 +6,7 @@
 /*   By: mvachon <mvachon@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 18:29:40 by mvachon           #+#    #+#             */
-/*   Updated: 2024/11/09 14:09:17 by mvachon          ###   ########lyon.fr   */
+/*   Updated: 2024/11/10 13:08:46 by mvachon          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,8 @@ void *ft_memchr(const void *s, int c, size_t n)
 // #include <stdio.h>
 
 // int main() {
-// 	char s[] = {0, 1, 2 ,3 ,4 ,5};
 //     const char str[20] = "Hecho, World!";
 //     char c = 'r';
-//     printf("%c", ft_memchr(s, 0, 0));
+//     printf("%c", ft_memchr(str, c, 8));
 
 // }

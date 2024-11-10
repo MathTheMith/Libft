@@ -1,61 +1,71 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mvachon <mvachon@student.42lyon.fr>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/10 13:45:03 by mvachon           #+#    #+#             */
+/*   Updated: 2024/11/10 14:19:11 by mvachon          ###   ########lyon.fr   */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
-static int ft_iterative_power(int nb, int power)
-{
-	int	i;
 
-	i = nb;
-	if (power < 0)
-		return (0);
-	if (power == 0)
-		return (1);
-	while (power > 1)
-	{
-		nb *= i;
-		power--;
-	}
-	return (nb);
+static size_t ft_intlen(int n) {
+    size_t count = 0;
+
+    if (n <= 0) {
+        count++;
+        if (n == 0) return count;
+        n = -n;
+    }
+
+    while (n > 0) {
+        count++;
+        n /= 10;
+    }
+
+    return count;
 }
 
-static size_t ft_intlen(int n)
-{
-	size_t count;
-
-	count = 0;
-	if (n < 0)
-	{
-		n *= -1;
-		count++;
-	}
-	while (n > 0)
-	{
-		count++;
-		n /= 10;
-	}
-	return (count);
-}
 char *ft_itoa(int n)
 {
-	char *ptr;
-	size_t c;
-	size_t i;
+    size_t len;
+    char *ptr;
 
-	i = 0;
-	c = ft_intlen(n);
-	ptr = malloc(c + 1);
-	if (n < 0)
-	{
-		ptr[i] == '-';
-		i++;
-	}
-	while (c > 0)
-	{
-		ptr[i] = (n / ft_iterative_power(10, c)) + 48;
-		c--;
-	}
-	return (ptr);
+    if (n == INT_MIN) {
+        ptr = "-2147483648";
+        return ptr;
+    }
+
+    len = ft_intlen(n);
+    ptr = malloc(len + 1);
+    if (!ptr)
+        return NULL;
+
+    ptr[len] = '\0';
+
+    if (n == 0) {
+        ptr[0] = '0';
+        return ptr;
+    }
+
+    if (n < 0) {
+        n = -n;
+        ptr[0] = '-';
+    }
+
+    while (n > 0) {
+        len--;
+        ptr[len] = (n % 10) + '0';
+        n /= 10;
+    }
+
+    return (ptr);
 }
 
-int main(void)
-{
-	printf("%s", ft_itoa(-453));
-}
+// int main(void)
+// {
+// 	printf("%s", ft_itoa(INT_MIN));
+// }

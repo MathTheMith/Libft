@@ -6,7 +6,7 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
     size_t i = 0;
     size_t str_len ;
     
-    str_len = strlen(s);
+    str_len = ft_strlen(s);
     if (start >= str_len)
     {
         ptr = malloc(1); 
