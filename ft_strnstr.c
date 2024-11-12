@@ -3,35 +3,36 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvachon <mvachon@student.42lyon.fr>        +#+  +:+       +#+        */
+/*   By: math <math@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 08:51:19 by mvachon           #+#    #+#             */
-/*   Updated: 2024/11/12 09:30:16 by mvachon          ###   ########lyon.fr   */
+/*   Updated: 2024/11/12 18:37:49 by math             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strnstr(const char *big, const char *little, size_t len)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-    size_t i = 0;
-    size_t n = 0;
+	size_t	i;
+	size_t	n;
 
-    if (little[n] == '\0') {
-        return (char *)big;
-    }
-    while (big[i] && len > 0)
-    {
-        n = 0;
-        while (little[n] == big[i + n] && (i + n) < len)
-        {
-            if (little[n + 1] == '\0')
-                return (char *)&big[i];
-            n++;
-        }
-        i++;
-    }
-    return (NULL);
+	n = 0;
+	i = 0;
+	if (little[n] == '\0')
+		return ((char *)big);
+	while (big[i] && len > 0)
+	{
+		n = 0;
+		while (little[n] == big[i + n] && (i + n) < len)
+		{
+			if (little[n + 1] == '\0')
+				return ((char *)&big[i]);
+			n++;
+		}
+		i++;
+	}
+	return (NULL);
 }
 
 // int main(void)

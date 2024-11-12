@@ -3,20 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvachon <mvachon@student.42lyon.fr>        +#+  +:+       +#+        */
+/*   By: math <math@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 09:02:28 by mvachon           #+#    #+#             */
-/*   Updated: 2024/11/07 12:06:24 by mvachon          ###   ########lyon.fr   */
+/*   Updated: 2024/11/12 18:35:15 by math             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "stdio.h"
 
-size_t ft_strlcpy(char *dst, const char *src, size_t size)
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	unsigned int i;
-	unsigned int res;
-	
+	unsigned int	i;
+	unsigned int	res;
+
 	i = 0;
 	res = 0;
 	while (src[res])
@@ -25,11 +25,11 @@ size_t ft_strlcpy(char *dst, const char *src, size_t size)
 		return (res);
 	while (i < size - 1 && src[i])
 	{
-    	dst[i] = src[i];
+		dst[i] = src[i];
 		i++;
-    }
-    dst[i] = '\0';
-    return (res);
+	}
+	dst[i] = '\0';
+	return (res);
 }
 
 // int main(void)

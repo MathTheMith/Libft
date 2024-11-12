@@ -3,34 +3,34 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvachon <mvachon@student.42lyon.fr>        +#+  +:+       +#+        */
+/*   By: math <math@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 12:34:09 by mvachon           #+#    #+#             */
-/*   Updated: 2024/11/09 18:27:31 by mvachon          ###   ########lyon.fr   */
+/*   Updated: 2024/11/12 18:34:51 by math             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t ft_strlcat(char *dst, const char *src, size_t size)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-    size_t  i;
-    size_t  j;
-    size_t  k;
+	size_t	i;
+	size_t	j;
+	size_t	k;
 
-    j = 0;
-    i = ft_strlen(dst);
+	j = 0;
+	i = ft_strlen(dst);
 	if (size <= ft_strlen(dst))
 		k = size + ft_strlen(src);
 	else
 		k = ft_strlen(dst) + ft_strlen(src);
-    while (src[j] && size > i + 1)
-    {
-        dst[i] = src[j];
-        j++;
-        i++;
-    }
-    return(k);
+	while (src[j] && size > i + 1)
+	{
+		dst[i] = src[j];
+		j++;
+		i++;
+	}
+	return (k);
 }
 
 // int main(void)

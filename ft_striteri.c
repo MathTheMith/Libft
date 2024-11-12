@@ -3,23 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvachon <mvachon@student.42lyon.fr>        +#+  +:+       +#+        */
+/*   By: math <math@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 09:20:31 by mvachon           #+#    #+#             */
-/*   Updated: 2024/11/12 09:38:36 by mvachon          ###   ########lyon.fr   */
+/*   Updated: 2024/11/12 18:33:31 by math             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void 	ft_striteri(char *s, void (*f)(unsigned int, char*))
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	size_t i;
-	
+	size_t	i;
+
 	i = 0;
-	while(s[i])
+	while (s[i])
 	{
 		(*f)(i, &s[i]);
-		i++;	
+		i++;
 	}
 }

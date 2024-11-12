@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvachon <mvachon@student.42lyon.fr>        +#+  +:+       +#+        */
+/*   By: math <math@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 18:35:25 by mvachon           #+#    #+#             */
-/*   Updated: 2024/11/07 15:56:02 by mvachon          ###   ########lyon.fr   */
+/*   Updated: 2024/11/12 18:36:23 by math             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_strncmp(const char *s1, const char *s2, size_t n)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	size_t	i;
 
@@ -25,7 +25,6 @@ int ft_strncmp(const char *s1, const char *s2, size_t n)
 	}
 	return (0);
 }
-
 
 // int main(void)
 // {

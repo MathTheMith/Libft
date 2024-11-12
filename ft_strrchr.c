@@ -3,19 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvachon <mvachon@student.42lyon.fr>        +#+  +:+       +#+        */
+/*   By: math <math@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 18:25:16 by mvachon           #+#    #+#             */
-/*   Updated: 2024/11/07 15:45:16 by mvachon          ###   ########lyon.fr   */
+/*   Updated: 2024/11/12 18:38:29 by math             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strrchr(const char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
-	const char *end = s;
+	const char	*end;
 
+	end = s;
 	while (*end)
 		end++;
 	while (end >= s)
@@ -29,9 +30,7 @@ char *ft_strrchr(const char *s, int c)
 	return (NULL);
 }
 
-
 // int main(void)
 // {
 // 	printf("%s", strrchr("tripouille", 'l'));
-// }
-	
+// }	
