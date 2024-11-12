@@ -6,27 +6,27 @@
 /*   By: mvachon <mvachon@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 13:45:03 by mvachon           #+#    #+#             */
-/*   Updated: 2024/11/10 14:19:11 by mvachon          ###   ########lyon.fr   */
+/*   Updated: 2024/11/12 11:21:25 by mvachon          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t ft_intlen(int n) {
+static size_t ft_intlen(int n)
+{
     size_t count = 0;
-
+	
     if (n <= 0) {
         count++;
-        if (n == 0) return count;
+        if (n == 0) 
+			return (count);
         n = -n;
     }
-
     while (n > 0) {
         count++;
         n /= 10;
     }
-
-    return count;
+		return (count);
 }
 
 char *ft_itoa(int n)
@@ -35,20 +35,23 @@ char *ft_itoa(int n)
     char *ptr;
 
     if (n == INT_MIN) {
-        ptr = "-2147483648";
-        return ptr;
+        ptr = malloc(12);
+        if (!ptr)
+            return (NULL);
+        ft_strlcpy(ptr, "-2147483648", 12);
+        return (ptr;)
     }
 
     len = ft_intlen(n);
     ptr = malloc(len + 1);
     if (!ptr)
-        return NULL;
+        return (NULL);
 
     ptr[len] = '\0';
 
     if (n == 0) {
         ptr[0] = '0';
-        return ptr;
+        return (ptr);
     }
 
     if (n < 0) {
@@ -64,6 +67,10 @@ char *ft_itoa(int n)
 
     return (ptr);
 }
+int main(void)
+// {
+// 	printf("%s", ft_itoa(INT_MIN));
+// }
 
 // int main(void)
 // {

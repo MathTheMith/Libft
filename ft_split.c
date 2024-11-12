@@ -22,8 +22,10 @@ char **ft_split(char const *s, char c)
     int k = find_occurence(s, c) + 1;
     ptr = malloc((k + 1) * sizeof(char *));
     if (!ptr)
-        return NULL;
-
+	{
+		free(ptr);
+        return (NULL);
+	}
     while (s[i])
     {
         while (s[i] && s[i] != c)
@@ -31,7 +33,6 @@ char **ft_split(char const *s, char c)
             len_word++;
             i++;
         }
-
         if (len_word > 0)
         {
             ptr[j] = malloc(len_word + 1);
@@ -43,7 +44,7 @@ char **ft_split(char const *s, char c)
                     j++;
                 }
                 free(ptr);
-                return NULL;
+                return (NULL);
             }
 			ptr[j][len_word] = '\0';
             ft_strlcpy(ptr[j], &s[i - len_word], len_word + 1);
@@ -57,15 +58,19 @@ char **ft_split(char const *s, char c)
     return (ptr);
 }
 
-// int main(void)
-// {
-//     char *str = "Bonjour a tous";
-//     char **result = ft_split(str, ' ');
+int main()
+{
+    char *str = "  tripouille  42  ";
+    char **result = ft_split(str, '4');
 
-//     int i = 0;
-//     while (result[i] != NULL)
-//     {
-//         printf("%s\n", result[i]);
-//         i++;
-//     }
-// }
+    int i = 0;
+    while (result[i] != NULL)
+    {
+        printf("%s\n", result[i]);
+        free(result[i]);
+        i++;
+    }
+
+    free(result);
+    return 0;
+}

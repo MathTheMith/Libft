@@ -6,7 +6,7 @@
 /*   By: mvachon <mvachon@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 08:51:19 by mvachon           #+#    #+#             */
-/*   Updated: 2024/11/09 15:19:37 by mvachon          ###   ########lyon.fr   */
+/*   Updated: 2024/11/12 09:30:16 by mvachon          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ char *ft_strnstr(const char *big, const char *little, size_t len)
         }
         i++;
     }
-    return NULL;
+    return (NULL);
 }
 
 // int main(void)

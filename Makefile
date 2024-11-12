@@ -6,7 +6,7 @@
 #    By: mvachon <mvachon@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/09 14:35:29 by mvachon           #+#    #+#              #
-#    Updated: 2024/11/10 17:11:12 by mvachon          ###   ########lyon.fr    #
+#    Updated: 2024/11/12 10:17:14 by mvachon          ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,6 +39,12 @@ SRC = ft_isalpha.c \
 	  ft_strjoin.c \
 	  ft_itoa.c \
 	  ft_split.c \
+	  ft_strmapi.c \
+	  ft_striteri.c \
+	  ft_putchar_fd.c \
+	  ft_putstr_fd.c \
+	  ft_putendl_fd.c \
+	  ft_putnbr_fd.c \
 
 HEADER = libft.h
 NAME = libft.a
