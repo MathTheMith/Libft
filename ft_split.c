@@ -6,7 +6,7 @@
 /*   By: math <math@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 18:31:07 by math              #+#    #+#             */
-/*   Updated: 2024/11/12 18:32:03 by math             ###   ########lyon.fr   */
+/*   Updated: 2024/11/12 20:13:14 by math             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,8 +76,8 @@ char	**ft_split(char const *s, char c)
 
 	i = 0;
 	j = 0;
-	ptr = allocate_memory(word_count);
 	word_count = find_occurence(s, c);
+	ptr = allocate_memory(word_count);
 	if (!ptr)
 		return (NULL);
 	while (s[i] && j < word_count)

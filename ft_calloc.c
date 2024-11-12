@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvachon <mvachon@student.42lyon.fr>        +#+  +:+       +#+        */
+/*   By: math <math@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 07:58:26 by mvachon           #+#    #+#             */
-/*   Updated: 2024/11/09 15:24:05 by mvachon          ###   ########lyon.fr   */
+/*   Updated: 2024/11/12 20:16:36 by math             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_calloc(size_t nmemb, size_t size)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*ptr;
 	size_t	total_size;
