@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: math <math@student.42lyon.fr>              +#+  +:+       +#+        */
+/*   By: mvachon <mvachon@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 12:34:09 by mvachon           #+#    #+#             */
-/*   Updated: 2024/11/12 18:34:51 by math             ###   ########lyon.fr   */
+/*   Updated: 2024/11/13 10:16:23 by mvachon          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 		j++;
 		i++;
 	}
+	dst[i] = '\0';
 	return (k);
 }
 

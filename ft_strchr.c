@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: math <math@student.42lyon.fr>              +#+  +:+       +#+        */
+/*   By: mvachon <mvachon@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 17:44:02 by mvachon           #+#    #+#             */
-/*   Updated: 2024/11/12 18:32:22 by math             ###   ########lyon.fr   */
+/*   Updated: 2024/11/13 10:39:19 by mvachon          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,21 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	while (*s)
+	size_t	i;
+
+	i = 0;
+	while (s[i])
 	{
-		if (*s == (char)c)
-			return ((char *)s);
-		s++;
+		if (s[i] == (char)c)
+			return ((char *)&s[i]);
+		i++;
 	}
-	if (c == '\0')
-		return ((char *)s);
+	if (s[i] == (char)c)
+		return ((char *)&s[i]);
 	return (NULL);
 }
 
 // int main(void)
 // {
-//   printf("%s", ft_strchr("bonjour", 'j'));
+//   printf("%s", ft_strchr("teste", 5));
 // }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: math <math@student.42lyon.fr>              +#+  +:+       +#+        */
+/*   By: mvachon <mvachon@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 18:25:16 by mvachon           #+#    #+#             */
-/*   Updated: 2024/11/12 18:38:29 by math             ###   ########lyon.fr   */
+/*   Updated: 2024/11/13 10:43:44 by mvachon          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ char	*ft_strrchr(const char *s, int c)
 	return (NULL);
 }
 
-// int main(void)
-// {
-// 	printf("%s", strrchr("tripouille", 'l'));
-// }	
+int main(void)
+{
+	printf("%s", strrchr("tripouille", 'l'));
+}	
