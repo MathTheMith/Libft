@@ -6,100 +6,56 @@
 /*   By: math <math@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 18:31:07 by math              #+#    #+#             */
-/*   Updated: 2024/11/12 20:13:14 by math             ###   ########lyon.fr   */
+/*   Updated: 2024/11/13 17:43:32 by math             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	find_occurence(char const *s, char c)
+static size_t	count_words(char const *s, char c)
 {
 	size_t	i;
-	int		count;
 
+	if (!*s)
+		return (0);
 	i = 0;
-	count = 0;
-	while (s[i])
+	while (*s)
 	{
-		if (s[i] != c && (i == 0 || s[i - 1] == c))
-			count++;
-		i++;
+		while (*s == c)
+			s++;
+		if (*s)
+			i++;
+		while (*s != c && *s)
+			s++;
 	}
-	return (count);
-}
-
-static char	**allocate_memory(int count)
-{
-	char	**ptr;
-
-	ptr = malloc((count + 1) * sizeof(char *));
-	if (!ptr)
-		return (NULL);
-	return (ptr);
-}
-
-static void	free_memory(char **ptr, int j)
-{
-	while (j >= 0)
-	{
-		free(ptr[j]);
-		j--;
-	}
-	free(ptr);
-}
-
-static char	*copy_word(char const *s, int len_word)
-{
-	char	*word;
-	int		i;
-
-	i = 0;
-	word = malloc(len_word + 1);
-	if (!word)
-		return (NULL);
-	while (i < len_word)
-	{
-		word[i] = s[i];
-		i++;
-	}
-	word[len_word] = '\0';
-	return (word);
+	return (i);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	int		word_count;
 	char	**ptr;
+	size_t	len;
 	int		i;
-	int		j;
-	int		len_word;
 
+	ptr = (char **)malloc((count_words(s, c) + 1) * sizeof(char *));
+	if (!s || !ptr)
+		return (0);
 	i = 0;
-	j = 0;
-	word_count = find_occurence(s, c);
-	ptr = allocate_memory(word_count);
-	if (!ptr)
-		return (NULL);
-	while (s[i] && j < word_count)
+	while (*s)
 	{
-		while (s[i] && s[i] == c)
-			i++;
-		len_word = 0;
-		while (s[i + len_word] && s[i + len_word] != c)
-			len_word++;
-		if (len_word > 0)
+		while (*s == c && *s)
+			s++;
+		if (*s)
 		{
-			ptr[j] = copy_word(&s[i], len_word);
-			if (!ptr[j])
-			{
-				free_memory(ptr, j - 1);
-				return (NULL);
-			}
-			j++;
+			if (!ft_strchr(s, c))
+				len = ft_strlen(s);
+			else
+				len = ft_strchr(s, c) - s;
+			ptr[i++] = ft_substr(s, 0, len);
+			s += len;
 		}
-		i += len_word;
 	}
-	ptr[j] = (NULL);
+	ptr[i] = NULL;
 	return (ptr);
 }
 
