@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvachon <mvachon@student.42lyon.fr>        +#+  +:+       +#+        */
+/*   By: math <math@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 15:16:54 by mvachon           #+#    #+#             */
-/*   Updated: 2024/11/13 16:25:31 by mvachon          ###   ########lyon.fr   */
+/*   Updated: 2024/11/13 17:48:08 by math             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,6 @@
 // {
 // 	t_list *new;
 // 	char *ptr;
-	
 // 	ptr = ft_striteri(ptr, f)
 // 	if
-	
-	
-	
 // }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvachon <mvachon@student.42lyon.fr>        +#+  +:+       +#+        */
+/*   By: math <math@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 13:56:02 by mvachon           #+#    #+#             */
-/*   Updated: 2024/11/13 16:30:12 by mvachon          ###   ########lyon.fr   */
+/*   Updated: 2024/11/13 17:50:59 by math             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,4 +26,5 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 			*lst = temp;
 		}
 	}
+	*lst = NULL;
 }
