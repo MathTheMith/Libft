@@ -6,7 +6,7 @@
 /*   By: mvachon <mvachon@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 13:45:03 by mvachon           #+#    #+#             */
-/*   Updated: 2024/11/12 11:21:25 by mvachon          ###   ########lyon.fr   */
+/*   Updated: 2024/11/13 15:09:28 by mvachon          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,7 @@ char	*ft_itoa(int n)
 	}
 	return (ptr);
 }
+
 // int main(void)
 // {
 // 	printf("%s", ft_itoa(INT_MIN));

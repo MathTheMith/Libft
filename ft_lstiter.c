@@ -1,36 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mvachon <mvachon@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/04 18:25:16 by mvachon           #+#    #+#             */
-/*   Updated: 2024/11/13 12:30:17 by mvachon          ###   ########lyon.fr   */
+/*   Created: 2024/11/13 15:10:35 by mvachon           #+#    #+#             */
+/*   Updated: 2024/11/13 16:31:29 by mvachon          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	const char	*end;
-
-	end = s;
-	while (*end)
-		end++;
-	while (end >= s)
+	while (lst)
 	{
-		if (*end == (char)c)
-			return ((char *)end);
-		end--;
+		f(lst->content);
+		lst = lst->next;
 	}
-	if ((char)c == '\0')
-		return ((char *)end);
-	return (NULL);
 }
-
-// int main(void)
-// {
-// 	printf("%s", strrchr("tripouille", 'l'));
-// }	

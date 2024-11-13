@@ -1,36 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mvachon <mvachon@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/04 18:25:16 by mvachon           #+#    #+#             */
-/*   Updated: 2024/11/13 12:30:17 by mvachon          ###   ########lyon.fr   */
+/*   Created: 2024/11/13 13:25:57 by mvachon           #+#    #+#             */
+/*   Updated: 2024/11/13 16:29:33 by mvachon          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	const char	*end;
+	t_list	*tmp;
 
-	end = s;
-	while (*end)
-		end++;
-	while (end >= s)
+	if (!*lst)
+		*lst = new;
+	else
 	{
-		if (*end == (char)c)
-			return ((char *)end);
-		end--;
+		tmp = *lst;
+		while (tmp->next)
+			tmp = tmp->next;
+		tmp->next = new;
 	}
-	if ((char)c == '\0')
-		return ((char *)end);
-	return (NULL);
 }
-
-// int main(void)
-// {
-// 	printf("%s", strrchr("tripouille", 'l'));
-// }	

@@ -1,36 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mvachon <mvachon@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/04 18:25:16 by mvachon           #+#    #+#             */
-/*   Updated: 2024/11/13 12:30:17 by mvachon          ###   ########lyon.fr   */
+/*   Created: 2024/11/13 12:46:52 by mvachon           #+#    #+#             */
+/*   Updated: 2024/11/13 16:29:46 by mvachon          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	const char	*end;
-
-	end = s;
-	while (*end)
-		end++;
-	while (end >= s)
-	{
-		if (*end == (char)c)
-			return ((char *)end);
-		end--;
-	}
-	if ((char)c == '\0')
-		return ((char *)end);
-	return (NULL);
+	new->next = *lst;
+	*lst = new;
 }
-
-// int main(void)
-// {
-// 	printf("%s", strrchr("tripouille", 'l'));
-// }	
