@@ -6,7 +6,7 @@
 /*   By: mvachon <mvachon@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 15:50:57 by mvachon           #+#    #+#             */
-/*   Updated: 2024/11/07 10:21:43 by mvachon          ###   ########lyon.fr   */
+/*   Updated: 2024/11/16 16:10:18 by mvachon          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,4 +20,4 @@ int	ft_isascii(int c)
 int main (void)
 		{
 		printf("%d", ft_isascii('\\'));
-	}*/
+}*/

@@ -6,7 +6,7 @@
 /*   By: mvachon <mvachon@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 10:19:11 by mvachon           #+#    #+#             */
-/*   Updated: 2024/11/07 13:42:04 by mvachon          ###   ########lyon.fr   */
+/*   Updated: 2024/11/16 13:00:51 by mvachon          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	i = 0;
 	p = (char *)dest;
 	d = (const char *)src;
+	if (!p && !d)
+		return (NULL);
 	while (i < n)
 	{
 		p[i] = d[i];

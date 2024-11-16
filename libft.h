@@ -6,17 +6,15 @@
 /*   By: mvachon <mvachon@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 09:17:05 by mvachon           #+#    #+#             */
-/*   Updated: 2024/11/13 16:28:27 by mvachon          ###   ########lyon.fr   */
+/*   Updated: 2024/11/16 13:43:44 by mvachon          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <string.h>
 # include <stdlib.h>
 # include <stddef.h>
-# include <stdio.h>
 # include <stdint.h>
 # include <limits.h>
 # include <unistd.h>

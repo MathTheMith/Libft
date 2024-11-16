@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: math <math@student.42lyon.fr>              +#+  +:+       +#+        */
+/*   By: mvachon <mvachon@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 13:45:03 by mvachon           #+#    #+#             */
-/*   Updated: 2024/11/13 17:35:28 by math             ###   ########lyon.fr   */
+/*   Updated: 2024/11/16 13:27:33 by mvachon          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,91 +14,47 @@
 
 static size_t	ft_intlen(int n)
 {
-	size_t	count;
-
-	count = 0;
-	if (n <= 0)
-	{
-		count++;
-		if (n == 0)
-			return (count);
-		n = -n;
-	}
-	while (n > 0)
-	{
-		count++;
-		n /= 10;
-	}
-	return (count);
-}
-
-char	*special_cases(int n)
-{
-	char	*ptr;
-
-	if (n == INT_MIN)
-	{
-		ptr = malloc(12);
-		if (!ptr)
-			return (NULL);
-		ft_strlcpy(ptr, "-2147483648", 12);
-		return (ptr);
-	}
-	if (n == 0)
-	{
-		ptr = malloc(2);
-		if (!ptr)
-			return (NULL);
-		ptr[0] = '0';
-		ptr[1] = '\0';
-		return (ptr);
-	}
-	return (NULL);
-}
-
-char	*allocate_memory(int n)
-{
 	size_t	len;
-	char	*ptr;
 
-	len = ft_intlen(n);
-	ptr = malloc(len + 1);
-	if (!ptr)
-		return (NULL);
-	ptr[len] = '\0';
-	return (ptr);
+	len = 1;
+	if (n < 0)
+		len++;
+	while (n / 10)
+	{
+		n /= 10;
+		len++;
+	}
+	return (len);
 }
 
-void	convert_number(char *ptr, int n, size_t len)
+static void	fill_number(char *str, int n, size_t len)
 {
+	str[len] = '\0';
 	if (n < 0)
 	{
+		str[0] = '-';
 		n = -n;
-		ptr[0] = '-';
 	}
-	while (n > 0)
+	while (len-- && str[len] != '-')
 	{
-		len--;
-		ptr[len] = (n % 10) + '0';
+		str[len] = (n % 10) + '0';
 		n /= 10;
 	}
 }
 
 char	*ft_itoa(int n)
 {
-	char	*result;
 	size_t	len;
-	char	*ptr;
+	char	*str;
 
-	result = special_cases(n);
-	if (result)
-		return (result);
+	if (n == INT_MIN)
+		return (ft_strdup("-2147483648"));
 	len = ft_intlen(n);
-	ptr = allocate_memory(n);
-	if (!ptr)
+	str = malloc(len + 1);
+	if (!str)
 		return (NULL);
-	convert_number(ptr, n, len);
-	return (ptr);
+	fill_number(str, n, len);
+	return (str);
 }
 
 // int main(void)

@@ -6,7 +6,7 @@
 /*   By: mvachon <mvachon@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 18:35:21 by mvachon           #+#    #+#             */
-/*   Updated: 2024/11/09 14:31:05 by mvachon          ###   ########lyon.fr   */
+/*   Updated: 2024/11/16 13:02:44 by mvachon          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	d = (unsigned char *)s2;
 	p = (unsigned char *)s1;
 	i = 0;
+	if (!p && !d)
+		return (0);
 	while (i < n)
 	{
 		if (p[i] != d[i])
